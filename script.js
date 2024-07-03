@@ -121,15 +121,6 @@ const chart = new Chart(ctx, {
 
 // Ajax
 
-function loadData() {
-    fetch("https://canvasjs.com/services/data/datapoints.php")
-        .then(response => response.json())
-        .then(dataPoints => {
-            displayData(dataPoints);
-        })
-        .catch(error => console.error("Error fetching data:", error));
-}
-
 function displayData(dataPoints) {
     var output = "<ul>";
     dataPoints.forEach(function (point) {
@@ -139,17 +130,23 @@ function displayData(dataPoints) {
     document.getElementById("dataPoints").innerHTML = output;
 }
 
-loadData();
-
-
 function loadData() {
-    fetch("https://canvasjs.com/services/data/datapoints.php")
+    fetch("https://canvasjs.com/services/data/datapoints.php", {
+        cache: "no-store" // Indique au navigateur de ne pas utiliser le cache pour avoir accès aux données aléatoires
+    })
         .then(response => response.json())
         .then(dataPoints => {
             displayChart(dataPoints);
+            displayData(dataPoints); // If you also want to display the data in a list
         })
         .catch(error => console.error("Error fetching data:", error));
 }
+
+// Call loadData immediately to fetch data on page load
+loadData();
+
+// Set interval to call loadData every 2000 milliseconds (2 seconds)
+setInterval(loadData, 2000);
 
 function displayChart(dataPoints) {
     const data = dataPoints.map(point => ({
@@ -174,5 +171,3 @@ function displayChart(dataPoints) {
 
     chart.render();
 }
-
-loadData();

@@ -4,7 +4,7 @@ Here's the [datavisualisation website](https://nategithub9.github.io/js-datavisu
 
 ## Tableau 1:
 
-- Données retranscrites à partir d'un lien php.
+- Données retranscrites avec AJAX à partir d'un lien php.
 
 [Data Points](https://canvasjs.com/services/data/datapoints.)
 
