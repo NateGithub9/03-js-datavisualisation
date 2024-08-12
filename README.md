@@ -1,15 +1,14 @@
-# js-datavisualisation-challenge
+# JS Data Visualization Challenge
 
-Here's the [datavisualisation website](https://nategithub9.github.io/js-datavisualisation-challenge/)
+Explore the [data visualization website](https://nategithub9.github.io/js-datavisualisation-challenge/).
 
-## Tableau 1:
+## Table 1:
 
-- Données retranscrites avec AJAX à partir d'un lien php.
+- Data is fetched using AJAX from a PHP link.
 
 [Data Points](https://canvasjs.com/services/data/datapoints.)
 
+## Tables 2 & 3:
 
-## Tableau 2 & 3
-
-- Données présentes sur la page html.
-- Utililisation de Chart JS pour extraire la data.
+- Data is embedded directly in the HTML page.
+- Utilizes Chart.js to display the data.
